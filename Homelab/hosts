@@ -12,9 +12,7 @@ k8s-node03
 ansible_python_interpreter=/usr/bin/python3
 ansible_connection=ssh
 ansible_user=ansible
-ansible_password=text
 ansible_become=yes
-ansible_become_password=text
 ansible_become_method=sudo
 
 #[windows]
