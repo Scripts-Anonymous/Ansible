@@ -4,9 +4,9 @@
 ubuntu
 
 [ubuntu]
-k8s-node01
-k8s-node02
-k8s-node03
+node01
+node02
+node03
 
 [linux:vars]
 ansible_python_interpreter=/usr/bin/python3
@@ -14,13 +14,3 @@ ansible_connection=ssh
 ansible_user=ansible
 ansible_become=yes
 ansible_become_method=sudo
-
-#[windows]
-#windowshost01
-#windowshost02
-#windowshost03
-
-#[windows:vars]
-#ansible_connection=ssh
-#nsible_user=administrator@ad.domain.tld
-#ansible_shell_type=cmd
