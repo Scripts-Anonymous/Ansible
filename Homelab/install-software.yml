@@ -1,0 +1,17 @@
+# Install Software
+---
+ - hosts: windows
+   tasks:
+    - name: Install %Software%
+      ansible.windows.win_package:
+        path: \\wsus01.lan\Software\%Software%.exe
+        product_id: '{GUID}' #Optional
+        state: present
+        log_path: $env:LogPath\Ansible\{{lookup('pipe', 'date +%Y%m%dT%H%M%S')}}.log
+        arguments: 
+        - /install
+        - /passive
+        - /norestart
+        #become: yes
+        #become_method: runas
+        #become_flags: logon_type=new_credential logon_flags=netcredentials_only

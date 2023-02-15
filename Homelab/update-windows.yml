@@ -6,15 +6,14 @@
    - name: Windows updates
      block:
        - name: Install Windows updates
-         win_updates:
+         ansible.windows.win_updates:
            category_names:
             - CriticalUpdates
             - SecurityUpdates
             - UpdateRollups
-            - Updates
             - DefinitionUpdates
            reboot: yes
-           log_path:  C:/ansible_windows_updates.log
+           log_path:  $env:LogPath\Ansible\$Date-$hostname.log
          register: update_results
        - name: Update results
          debug:
